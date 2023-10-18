@@ -1,0 +1,25 @@
+.weather-card {
+    width: 500px;
+    height: 250px;
+    border: 2px solid black;
+    margin: 5px auto;
+    background-color: cadetblue;
+    color: white;
+
+}
+
+.emoji {
+    font-size: 24px;    
+    font-weight: bold;
+}
+
+.heatwave {
+    background-color: rgb(165, 78, 78);
+    padding: 2px;
+}
+
+.strong-wind {
+    background-color: orange;
+    color: black;
+    padding: 2px;
+}
