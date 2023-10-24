@@ -1,0 +1,10 @@
+.app {
+  text-align: center;
+}
+
+.add-scoreboard {
+  margin: 5px;
+  background: rgb(55, 55, 200);
+  color: aliceblue;
+  padding: 5px;
+}

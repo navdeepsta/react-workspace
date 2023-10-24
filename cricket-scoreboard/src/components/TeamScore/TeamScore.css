@@ -1,0 +1,13 @@
+.team-card{
+    border: 2px solid black;
+    margin: 10px auto;
+    width: 50%;
+}
+
+.team-name {
+    color: brown;  
+}
+
+button {
+    margin: 2px;
+}
