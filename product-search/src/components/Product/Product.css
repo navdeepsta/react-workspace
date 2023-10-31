@@ -1,0 +1,16 @@
+.product-card {
+  display: grid;
+  grid-template-rows: auto;
+  row-gap: 5px;
+  width: 23%;
+  border: 2px solid brown;
+  border-radius: 5px;
+  text-align: center;
+  margin: 2px;
+  background-color: beige;
+}
+
+.price {
+  font-size: larger;
+  font-weight: bold;
+}
