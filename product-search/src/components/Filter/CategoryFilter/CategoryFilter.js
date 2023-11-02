@@ -12,7 +12,7 @@ export default class CategoryFilter extends Component {
               )
             : ''
         );
-        this.props.onFilterProducts(filteredProducts);
+        this.props.onCategoryFilter(filteredProducts);
     }
     render() {
         return (

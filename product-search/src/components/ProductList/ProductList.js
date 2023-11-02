@@ -10,7 +10,7 @@ export default class ProductList extends Component {
   state = { products: products, search: '' };
   
   // Filtering products based on category
-  filterProducts = (filteredProducts) => {
+  categoryFilter = (filteredProducts) => {
     this.setState({
       products: filteredProducts.length > 0 ? filteredProducts : products,
     });
@@ -43,7 +43,7 @@ export default class ProductList extends Component {
     return (
       <>
         <CategoryFilter products={products}
-                        onFilterProducts={(filteredProducts)=>this.filterProducts(filteredProducts)}
+                        onCategoryFilter={(filteredProducts)=>this.categoryFilter(filteredProducts)}
          />
         <div className='search'>
           <input
