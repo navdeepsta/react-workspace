@@ -1,17 +1,3 @@
-.filter-links {
-  display: flex;
-  justify-content: center;
-  background-color: chocolate;
-  padding: 10px;
-  margin-bottom: 10px;
-}
-
-.filter-links button {
-  padding: 5px;
-  margin: 2px;
-  font-size: 1em;
-}
-
 .search {
   display: flex;
   justify-content: center;

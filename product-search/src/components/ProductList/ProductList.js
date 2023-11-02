@@ -3,20 +3,14 @@ import Product from '../Product/Product';
 import Button from '../Button/Button';
 import './ProductList.css';
 import products from '../../data/products';
+import CategoryFilter from '../Filter/CategoryFilter/CategoryFilter'; 
 
 export default class ProductList extends Component {
   
   state = { products: products, search: '' };
   
-  filterProducts = (...categories) => {
-    const filteredProducts = [];
-    categories.map((category) =>
-      category
-        ? filteredProducts.push(
-            ...products.filter((product) => product.category === category)
-          )
-        : ''
-    );
+  // Filtering products based on category
+  filterProducts = (filteredProducts) => {
     this.setState({
       products: filteredProducts.length > 0 ? filteredProducts : products,
     });
@@ -48,12 +42,9 @@ export default class ProductList extends Component {
   render() {
     return (
       <>
-        <div className='filter-links'>
-          <Button name='Shirts' onClick={() => this.filterProducts('shirts')}/>
-          <Button name='Pants and skirts' onClick={() => this.filterProducts('shirts', 'pants')}/>
-          <Button name='Jackets' onClick={() => this.filterProducts('jackets')}/>
-          <Button name='All products' onClick={() => this.filterProducts()}/>
-        </div>
+        <CategoryFilter products={products}
+                        onFilterProducts={(filteredProducts)=>this.filterProducts(filteredProducts)}
+         />
         <div className='search'>
           <input
             type='text'
