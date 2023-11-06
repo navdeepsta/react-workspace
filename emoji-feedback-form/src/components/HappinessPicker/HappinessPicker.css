@@ -1,0 +1,12 @@
+.happiness-picker-card button{
+    font-size: 28px;
+    padding: 5px;
+}
+
+.active {
+    background-color: blueviolet;
+}
+
+.inactive {
+    background-color: white;
+}
