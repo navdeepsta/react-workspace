@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import './FilmRow.css';
 
-export default function  
-(props) {
+export default function FilmRow(props) {
     const [fave, setFave] = useState(false)
     const {id, title, release_date, poster_path} = props.film;
     const posterURL = `https://image.tmdb.org/t/p/w780${poster_path}`;
@@ -26,7 +25,7 @@ export default function
         <button className='action' onClick={changeFave}>
           <span className='material-icons'>{fave ? 'remove_from_queue' : 'add_to_queue'}</span>
         </button>
-        <button className='action' onClick={()=>props.onSelectFilm(props.film)}>
+        <button className='action' onClick={()=>props.showDetails(id)}>
           <span className='material-icons' >read_more</span>
         </button>
       </div>

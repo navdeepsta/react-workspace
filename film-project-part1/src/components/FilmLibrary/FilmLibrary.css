@@ -41,7 +41,7 @@
   text-transform: uppercase;
 }
 
-.FilmLibrary .film-list-filters {
+.FilmLibrary .film-list-filters{
   position: fixed;
   top: 1.6em;
   left: 0;
@@ -50,6 +50,7 @@
   justify-content: center;
   width: 33.333333%;
 }
+
 
 .FilmLibrary .film-list-filter {
   flex-grow: 1;
