@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
-import FilmDetail from "../FilmDetail/FilmDetail";
+//import FilmDetail from "../FilmDetail/FilmDetail";
 import "./FilmLibrary.css";
 import FilmRow from "../FilmRow/FilmRow";
+import { Outlet } from "react-router-dom"
 
 function FilmLibrary() {
   const [films, setFilms] = useState([]);
-  const [selectedFilm, setSelectedFilm] = useState(null);
+ // const [selectedFilm, setSelectedFilm] = useState(null);
   const [page, setPage] = useState(1);
   const [releaseYear, setReleaseYear] = useState("2022");
   const [favouriteFilms, setFavouriteFilms] = useState([]);
@@ -22,16 +23,16 @@ function FilmLibrary() {
       .catch((err) => console.error(err));
   }, [page, releaseYear]);
 
-  const showDetails = (filmId) => {
-    const url = `https://api.themoviedb.org/3/movie/${filmId}?api_key=${TMDB_API_KEY}`;
-    fetch(url)
-      .then((response) => response.json())
-      .then((response) => {
-        setSelectedFilm(response);
-      })
-      .catch((err) => console.error(err));
-  };
-
+  // const showDetails = (filmId) => {
+  //   const url = `https://api.themoviedb.org/3/movie/${filmId}?api_key=${TMDB_API_KEY}`;
+  //   fetch(url)
+  //     .then((response) => response.json())
+  //     .then((response) => {
+  //       setSelectedFilm(response);
+  //     })
+  //     .catch((err) => console.error(err));
+  // };
+ 
   const addFavouriteFilm = (filmId) => {
     const film = films.filter((film) => film.id === filmId);
     setFavouriteFilms((prev) => [...prev, film[0]]);
@@ -91,7 +92,7 @@ function FilmLibrary() {
           <FilmRow
             key={film.id}
             film={film}
-            showDetails={showDetails}
+           // showDetails={showDetails}
             activeList={activeList}
             addFavouriteFilm={addFavouriteFilm}
             removeFavouriteFilm={removeFavouriteFilm}
@@ -103,12 +104,13 @@ function FilmLibrary() {
             onClick={() => setPage((prev) => prev + 1)}
           >
             Load More
-          </button>
+          </button> 
         )}
       </div>
       <div className="film-details">
         <h1 className="section-title">DETAILS</h1>
-        <FilmDetail onSelectFilm={selectedFilm} />
+        <Outlet />
+        {/* <FilmDetail onSelectFilm={selectedFilm} /> */}
       </div>
     </div>
   );
