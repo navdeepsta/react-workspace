@@ -1,0 +1,21 @@
+.Tabs {
+    padding: 10px;
+    background-color: lightgray;
+  }
+  
+  .Tabs .tab {
+    padding: 10px 20px;
+    display: inline-block;
+    background-color: rgb(203, 236, 247);
+    margin-right: 6px;
+  }
+  
+  .Tabs .tabcontent {
+    padding: 10px;
+    background-color: white;
+  }
+  
+  .Tabs .tab.selected {
+    font-weight: bold;
+    background-color: white;
+  }
